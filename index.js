@@ -63,11 +63,12 @@ async function getGeneros() {
 };
 
 async function getGeneroLista(id) {
-    const { data } = await api('discover/movie/', {
+    const { data } = await api(`discover/movie/${id}`);
+    /*{
         params : {
             with_genres: id,
         },
-    });
+    });*/
     
     contenedorGeneros.innerHTML = '';
 
@@ -107,16 +108,16 @@ async function getGeneroLista(id) {
 
 }
 
-async function getBuscar() {
+/*async function getBuscar() {
     const { data } = await api('discover/movie/', {
         params : {
             with_genres: id,
         },
     });
-    
+
     btnBuscar.addEventListener('click' , ()=> {
        console.log(inputBuscar.value);
        location.hash = `#search=${inputBuscar.value}`; 
     });
     
-}
+}*/
